@@ -13,6 +13,9 @@ interface AppContextType {
   currentUser: User | null;
   setCurrentUser: (user: User | null) => void;
   events: Event[];
+  bookmarks: string[];
+  toggleBookmark: (eventId: string) => void;
+  isEventBookmarked: (eventId: string) => boolean;
   notifications: Notification[];
   unreadCount: number;
   markNotificationRead: (id: string) => void;
@@ -32,6 +35,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const [currentUser, setCurrentUserState] = useState<User | null>(null);
   const [events, setEvents] = useState<Event[]>([]);
   const [notifications, setNotifications] = useState<Notification[]>([]);
+  const [bookmarks, setBookmarks] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   const refreshEvents = useCallback(async () => {
@@ -176,12 +180,46 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
 
   const unreadCount = notifications.filter((n) => !n.isRead).length;
 
-  return (
+  const toggleBookmark = useCallback(async (eventId: string) => {
+    setBookmarks((prev) => {
+      if (prev.includes(eventId)) {
+        return prev.filter((id) => id !== eventId);
+      } else {
+        return [...prev, eventId];
+      }
+    });
+    
+    try {
+      await AsyncStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+    } catch {}
+  }, [bookmarks]);
+
+  const isEventBookmarked = useCallback((eventId: string) => {
+    return bookmarks.includes(eventId);
+  }, [bookmarks]);
+
+  // Load bookmarks from storage
+  useEffect(() => {
+    const loadBookmarks = async () => {
+      try {
+        const saved = await AsyncStorage.getItem("bookmarks");
+        if (saved) {
+          setBookmarks(JSON.parse(saved));
+        }
+      } catch {}
+    };
+    loadBookmarks();
+  }, []);
+
+    return (
     <AppContext.Provider
       value={{
         currentUser,
         setCurrentUser,
         events,
+        bookmarks,
+        toggleBookmark,
+        isEventBookmarked,
         notifications,
         unreadCount,
         markNotificationRead,

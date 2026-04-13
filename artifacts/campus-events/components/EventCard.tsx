@@ -10,6 +10,7 @@ import { Feather } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 import * as Haptics from "expo-haptics";
 import { useColors } from "@/hooks/useColors";
+import { useApp } from "@/context/AppContext";
 import { Event, EventStatus } from "@/types";
 
 interface EventCardProps {
@@ -39,10 +40,18 @@ const CATEGORY_COLORS: Record<string, string> = {
 export default function EventCard({ event, variant = "default" }: EventCardProps) {
   const colors = useColors();
   const router = useRouter();
+  const { isEventBookmarked, toggleBookmark } = useApp();
+  const isBookmarked = isEventBookmarked(event.id);
 
   const handlePress = () => {
     if (Platform.OS !== "web") Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     router.push(`/event/${event.id}`);
+  };
+
+  const handleBookmarkPress = (e: any) => {
+    e.stopPropagation();
+    if (Platform.OS !== "web") Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+    toggleBookmark(event.id);
   };
 
   const catColor = CATEGORY_COLORS[event.category] ?? CATEGORY_COLORS.Other;
@@ -169,7 +178,15 @@ export default function EventCard({ event, variant = "default" }: EventCardProps
             )}
           </View>
 
-          <View style={styles.footerRight}>
+            <View style={styles.footerRight}>
+            <TouchableOpacity onPress={handleBookmarkPress} style={{ marginRight: 8 }}>
+              <Feather 
+                name={isBookmarked ? "bookmark" : "bookmark"} 
+                size={15} 
+                color={isBookmarked ? colors.primary : colors.mutedForeground} 
+                fill={isBookmarked ? colors.primary : "none"}
+              />
+            </TouchableOpacity>
             <Feather name="eye" size={13} color={colors.mutedForeground} />
             <Text style={[styles.footerText, { color: colors.mutedForeground }]}>
               {" "}{event.viewCount}
