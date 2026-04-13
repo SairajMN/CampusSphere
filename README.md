@@ -22,12 +22,12 @@ CampusSphere is a monorepo containing:
 
 ```mermaid
 graph TD
-    A(Mobile App (React Native)) --> B(API Gateway)
-    B --> C[Auth Middleware]
-    C --> D[Business Logic Layer]
-    D --> E[Database (SQLite / PostgreSQL)]
-    D --> F[Notification Service]
-    D --> G[Analytics Engine]
+    A["Mobile App (React Native)"] --> B["API Gateway"]
+    B --> C["Auth Middleware"]
+    C --> D["Business Logic Layer"]
+    D --> E["Database (SQLite / PostgreSQL)"]
+    D --> F["Notification Service"]
+    D --> G["Analytics Engine"]
     
     style A fill:#4ECDC4,color:white
     style B fill:#FF6B6B,color:white
