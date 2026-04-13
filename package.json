@@ -1,0 +1,24 @@
+{
+  "name": "workspace",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "bun run typecheck && bun run --if-present build",
+    "typecheck:libs": "tsc --build",
+    "typecheck": "bun run typecheck:libs && bun run --filter \"./artifacts/**\" --filter \"./scripts\" --if-present typecheck",
+    "dev": "bun run --parallel dev",
+    "dev:api": "bun run --filter api-server dev",
+    "dev:app": "bun run --filter campus-events dev",
+    "dev:sandbox": "bun run --filter mockup-sandbox dev"
+  },
+  "private": true,
+  "workspaces": [
+    "artifacts/*",
+    "lib/*",
+    "scripts"
+  ],
+  "devDependencies": {
+    "typescript": "~5.9.2",
+    "prettier": "^3.8.1"
+  }
+}

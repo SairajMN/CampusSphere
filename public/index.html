@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusSphere - Download App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4ECDC4',
+                        secondary: '#FF6B6B',
+                        dark: '#111827'
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .gradient-bg {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            }
+            .glass {
+                backdrop-filter: blur(16px);
+                background: rgba(255, 255, 255, 0.7);
+            }
+        }
+    </style>
+</head>
+<body class="font-inter bg-gray-50 min-h-screen">
+    <!-- Hero Section -->
+    <header class="gradient-bg min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-white rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="mb-8">
+                    <div class="inline-flex items-center justify-center w-24 h-24 rounded-3xl bg-white shadow-xl mb-6">
+                        <svg class="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h1 class="text-[clamp(2.5rem,8vw,4.5rem)] font-extrabold text-white text-shadow mb-4">
+                        CampusSphere
+                    </h1>
+                    <p class="text-[clamp(1.1rem,3vw,1.5rem)] text-white/90 max-w-2xl mx-auto mb-10 leading-relaxed">
+                        Next-Generation Campus Event Management Platform. Discover events, register, and stay updated with everything happening on your campus.
+                    </p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+                    <a href="#download" class="group px-8 py-4 bg-white text-primary font-semibold rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto flex items-center justify-center gap-3">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M17 18v1H6v-1h11zm-.5-6.6l-.7-.7c-1.2-1.2-2.8-1.8-4.5-1.8s-3.3.6-4.5 1.8l-.7.7-1.1 1.3 1.3 1.1c.4.3 1 .3 1.4 0l.6-.6V16h9v-2.5l.6.6c.4.3 1 .3 1.4 0l1.3-1.1-1.1-1.3z"/>
+                        </svg>
+                        Download App
+                    </a>
+                    <a href="#features" class="px-8 py-4 bg-white/10 text-white font-semibold rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 w-full sm:w-auto">
+                        Learn More
+                    </a>
+                </div>
+
+                <div class="animate-bounce">
+                    <svg class="w-8 h-8 mx-auto text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Download Section -->
+    <section id="download" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-dark mb-6">Download Now</h2>
+                <p class="text-gray-600 text-lg">Available for Android and iOS devices. Get started in seconds.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="group p-8 bg-gradient-to-br from-primary/5 to-primary/10 rounded-3xl border border-primary/10 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center">
+                            <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.523 15.3414c-.6776 0-1.2284-.5507-1.2284-1.2283 0-.6776.5508-1.2283 1.2284-1.2283.6777 0 1.2283.5507 1.2283 1.2283 0 .6776-.5506 1.2283-1.2283 1.2283zM6.4748 15.3414c-.6776 0-1.2283-.5507-1.2283-1.2283 0-.6776.5507-1.2283 1.2283-1.2283.6776 0 1.2284.5507 1.2284 1.2283 0 .6776-.5508 1.2283-1.2284 1.2283z"/>
+                                <path d="M20.5714 11.2085V5.9998c0-.2761-.2238-.5-.5-.5H3.9285c-.2761 0-.5.2239-.5.5v5.2087l8.0714 4.6429 8.0715-4.643z"/>
+                            </svg>
+                        </div>
+                        <span class="px-4 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">v1.0.0</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark mb-3">Android APK</h3>
+                    <p class="text-gray-600 mb-6">Direct download for Android devices. No Google Play account required.</p>
+                    <a href="#" class="w-full py-3 bg-primary text-white font-semibold rounded-xl hover:bg-primary/90 transition-colors flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                        Download APK
+                    </a>
+                </div>
+
+                <div class="group p-8 bg-gradient-to-br from-secondary/5 to-secondary/10 rounded-3xl border border-secondary/10 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-16 h-16 rounded-2xl bg-secondary flex items-center justify-center">
+                            <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.05-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                            </svg>
+                        </div>
+                        <span class="px-4 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Coming Soon</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark mb-3">iOS App</h3>
+                    <p class="text-gray-600 mb-6">Coming soon to App Store. Subscribe to get notified when available.</p>
+                    <button disabled class="w-full py-3 bg-gray-200 text-gray-500 font-semibold rounded-xl cursor-not-allowed flex items-center justify-center gap-2">
+                        Notify Me
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-dark mb-6">Everything you need</h2>
+                <p class="text-gray-600 text-lg">All the features to keep your campus events organized and accessible.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-6">
+                    <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Discover Events</h3>
+                    <p class="text-gray-600">Browse all upcoming campus events, filter by category, and find things you're interested in.</p>
+                </div>
+
+                <div class="p-6">
+                    <div class="w-12 h-12 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.31 2.31 0 0118 14.235V11a7 7 0 11-14 0v3.235c0 .697-.397 1.35-1.095 1.765L3 17h5" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Smart Notifications</h3>
+                    <p class="text-gray-600">Get real-time updates, reminders before events start, and important announcements.</p>
+                </div>
+
+                <div class="p-6">
+                    <div class="w-12 h-12 rounded-xl bg-green-100 text-green-600 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">QR Check-in</h3>
+                    <p class="text-gray-600">Fast check-in with QR codes. No more paper lists or manual attendee tracking.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-dark">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex items-center justify-center gap-2 mb-4">
+                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                <span class="text-white font-bold text-lg">CampusSphere</span>
+            </div>
+            <p class="text-gray-400">© 2026 CampusSphere. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
