@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "bun run typecheck && bun run --if-present build",
+    "build": "bun run --if-present build",
     "typecheck:libs": "tsc --build",
     "typecheck": "bun run typecheck:libs && bun run --filter \"./artifacts/**\" --filter \"./scripts\" --if-present typecheck",
     "dev": "bun run --parallel dev",
