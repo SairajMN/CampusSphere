@@ -22,7 +22,7 @@ CampusSphere is a monorepo containing:
 
 ```mermaid
 graph TD
-    A[Mobile App (React Native)] --> B[API Gateway]
+    A(Mobile App (React Native)) --> B(API Gateway)
     B --> C[Auth Middleware]
     C --> D[Business Logic Layer]
     D --> E[Database (SQLite / PostgreSQL)]
