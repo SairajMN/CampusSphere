@@ -346,3 +346,4 @@ For support, email campussphere@example.com or open an issue in the repository.
 <div align="center">
 <sub>Built with ❤️ by MCA Devs Team</sub>
 </div>
+
