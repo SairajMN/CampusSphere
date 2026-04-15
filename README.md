@@ -1,8 +1,5 @@
 # CampusSphere
 
-> **Next-Generation Campus Event Management Platform**
->
-> A modern, full-stack event management system designed specifically for college campuses, enabling seamless event creation, approval workflows, attendee tracking, and real-time notifications.
 
 ---
 
